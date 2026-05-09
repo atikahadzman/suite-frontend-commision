@@ -75,8 +75,7 @@
                     @empty
                         <tr>
                             <td colspan="4" class="px-6 py-8 text-center text-gray-500 dark:text-gray-400">
-                                No sales found. <a href="{{ route('sales.create') }}"
-                                    class="text-brand-500 hover:text-brand-600 font-medium">Add one!</a>
+                                No sales found.
                             </td>
                         </tr>
                     @endforelse

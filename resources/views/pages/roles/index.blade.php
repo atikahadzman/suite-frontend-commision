@@ -61,8 +61,7 @@
                     @empty
                         <tr>
                             <td colspan="4" class="px-6 py-8 text-center text-gray-500 dark:text-gray-400">
-                                No roles found. <a href="{{ route('roles.create') }}"
-                                    class="text-brand-500 hover:text-brand-600 font-medium">Create one</a>
+                                No roles found.
                             </td>
                         </tr>
                     @endforelse
