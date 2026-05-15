@@ -9,7 +9,7 @@ use App\Http\Controllers\SalesController;
 use App\Http\Controllers\UserController;
 
 // authentication routes
-Route::get('/', fn() => redirect()->route('signin'));
+Route::get('/signin', [AuthController::class, 'login'])->name('signin');
 Route::middleware('guest.session')->group(function () {
     Route::get('/signin', fn() => view('pages.auth.signin'))->name('signin');
     Route::post('/signin', [AuthController::class, 'login'])->name('signin.post');
@@ -33,20 +33,6 @@ Route::middleware('web')->group(function () {
     // users management
     Route::resource('users', UserController::class);
 });
-
-
-
-
-// authentication pages
-Route::get('/signin', function () {
-    return view('pages.auth.signin', ['title' => 'Sign In']);
-})->name('signin');
-
-// Route::post('/signin', [AuthController::class, 'login'])->name('signin.post');
-
-Route::get('/signup', function () {
-    return view('pages.auth.signup', ['title' => 'Sign Up']);
-})->name('signup');
 
 
 
